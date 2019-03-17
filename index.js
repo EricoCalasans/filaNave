@@ -14,6 +14,8 @@ app.get("/form", function(req,res){
     res.render("form")
 })
 
+
+
 app.post("/volta", function(req,res){
     post.all().then(function(Posts){
         res.render("volta", {posts: Posts})
@@ -21,6 +23,9 @@ app.post("/volta", function(req,res){
     })
     
 })
+
+
+
 
 
 
