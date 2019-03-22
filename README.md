@@ -5,3 +5,6 @@ extensões:
 nodemon
 express
 body-parser
+mysql2
+handlebars
+sequalize

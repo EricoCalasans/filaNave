@@ -1,6 +1,8 @@
 show databases;
-describe usuarios;
 use testandomy;
+--show tables;
+--describe postagens;
+--describe usuarios;
 
 create table usuaros(
     nome varchar(50),
@@ -15,6 +17,7 @@ insert into usuarios(nome, email, idade) values(
 );
 
 select * from usuarios;
+select * from postagens;
 
 select * from usuarios where idade = 21;
 
