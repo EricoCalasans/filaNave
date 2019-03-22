@@ -34,6 +34,10 @@ app.get('/cad', function(req, res){
     res.render('formulario')
 })
 
+app.get('/teste2', function(req, res){
+    res.render('testando')
+})
+
 app.post('/add', function(req, res){
     //res.send("texto: "+req.body.titulo + " Conteudo " + req.body.conteudo);
 
