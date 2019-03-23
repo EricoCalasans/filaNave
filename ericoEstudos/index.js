@@ -66,6 +66,9 @@ app.get("/teste", function(req,res){
     
 })
 
+
+
+
 //linha final, aviso de servidor rodando-----------------------
 app.listen(8081, function(){
 
