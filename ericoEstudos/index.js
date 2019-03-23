@@ -24,8 +24,11 @@ app.use(bodyParser.json());
 
 //---------------------------------------------------------------------------
 
-var tituloNave = "    ";
-var conteudoNave = "    ";
+
+
+
+var tituloNave = "  esta indo  ";
+var conteudoNave = "   foi mesmo ";
 
 
 
@@ -53,20 +56,28 @@ app.post("/redir", function(req,res){
     res.sendFile(__dirname + "/html/redir.html");
 })
 
-app.get("/", function(req,res){
+
+app.use(express.static("js"));
+
+app.get("/pag", function(req,res){
     
     res.sendFile(__dirname + "/html/index.html");
 })
 
 app.get("/teste", function(req,res){
 
-  
-
     res.send("texto: "+tituloNave + " Conteudo " + conteudoNave);
     
 })
 
+let getDados = () => {
+    //O seu método de leitura do arquivo vem aqui
+    return tituloNave +"|"+ conteudoNave;
+}
 
+app.get('/dados', (req, res) => {
+    res.send(getDados());
+});
 
 
 //linha final, aviso de servidor rodando-----------------------
