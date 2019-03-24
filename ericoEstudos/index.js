@@ -58,6 +58,7 @@ app.post("/redir", function(req,res){
 
 
 app.use(express.static("js"));
+app.use(express.static("views"));
 
 app.get("/pag", function(req,res){
     
@@ -78,6 +79,11 @@ let getDados = () => {
 app.get('/dados', (req, res) => {
     res.send(getDados());
 });
+
+app.get("/js", function(req,res){
+    
+    res.sendFile(__dirname + "/js/mudartexto.js");
+})
 
 
 //linha final, aviso de servidor rodando-----------------------
