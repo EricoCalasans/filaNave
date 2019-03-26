@@ -1,7 +1,10 @@
 
-var nome1, nome2, nome3, nome4, nome5;
-var pc1, pc2, pc3, pc4, pc5;
-
+var nNome;
+var nPc;
+var nome = new Array(5);
+var pc = new Array(5);
+//nome[0] = "teste"
+//alert(nome[0] + " foi");
 //console.log(f.DATA); // MY DATA
 $(document).ready(function() {
   $.get('/dados', function(res) {
@@ -20,75 +23,144 @@ $(document).ready(function() {
 });*/
       
 window.setInterval(      
-function alterar(){
+function organzar(){
 
   $.get('/dados', function(res) {
-    
-    if((res.substring(res.indexOf("|"), 0 )) === "-/ini/-" && (res.substring(res.indexOf("|")+1)) === "-/ini/-"){
-      
-      nome1 = "";
-      nome2 = "";
-      nome3 = "";
-      nome4 = "";
-      nome5 = "";
-      pc1 = "";
-      pc2 = "";
-      pc3 = "";
-      pc4 = "";
-      pc5 = "";
-      
-      
-      $('#idNome1').html("");
-      $('#idNome2').html("");
-      $('#idNome3').html("");
-      $('#idNome4').html("");
-      $('#idNome5').html("");
-      $('#idPc1').html("");
-      $('#idPc2').html("");
-      $('#idPc3').html("");
-      $('#idPc4').html("");
-      $('#idPc5').html("");  
+    nNome = res.substring(res.indexOf("|"), 0 );
+    nPc = res.substring(res.indexOf("|")+1);
 
+  })
+    
+  if(nNome === "-/ini/-" || nPc === "-/ini/-"){
+    
+    limpar();
+    
+
+
+  }else{
+    /*
+    switch (nPc) {
+      case pc[0]:
+        nome[0] = "";
+        pc[0] = "";
+        estruturar(1)
+        break;
+      case pc[1]:
+        nome[1] = "";
+        pc[1] = "";
+        estruturar(2)
+        break;
+      case pc[2]:
+        nome[2] = "";
+        pc[2] = "";
+        estruturar(3)
+        break;
+      case pc[3]:
+        nome[3] = "";
+        pc[3] = "";
+        estruturar(4)
+        break;
+      case pc[4]:
+        nome[4] = "";
+        pc[4] = "";
+        estruturar(5)
+        break;  
+    }*/
+
+    if(nome[0] === nNome){
+      pc[0] = nPc;
+      $('#idPc1').html(pc[0]);
 
     }else{
-      if(nome1 === res.substring(res.indexOf("|"), 0 )){
-        pc1 = res.substring(res.indexOf("|")+1) 
-        $('#idPc1').html(pc1);
+      verificarComputador();
+      
+      nome[4] = nome[3];
+      pc[4] = pc[3];
+      nome[3] = nome[2];
+      pc[3] = pc[2];
+      nome[2] = nome[1];
+      pc[2] = pc[1];
+      nome[1] = nome[0];
+      pc[1] = pc[0];
+      nome[0] = nNome;
+      pc[0] = nPc;
+      
+      alterar();
 
-      }else{
-        nome5 = nome4;
-        pc5 = pc4;
-        nome4 = nome3;
-        pc4 = pc3;
-        nome3 = nome2;
-        pc3 = pc2;
-        nome2 = nome1;
-        pc2 = pc1;
-        nome1 = res.substring(res.indexOf("|"), 0 );
-        pc1 = res.substring(res.indexOf("|")+1)
-    
 
-        $('#idNome1').html(nome1);
-        $('#idNome2').html(nome2);
-        $('#idNome3').html(nome3);
-        $('#idNome4').html(nome4);
-        $('#idNome5').html(nome5);
-        $('#idPc1').html(pc1);
-        $('#idPc2').html(pc2);
-        $('#idPc3').html(pc3);
-        $('#idPc4').html(pc4);
-        $('#idPc5').html(pc5);
-      }
-      
-      
-      
-   
-    
     }
+    
+    
+    
+  
+  
+  }
 
-    //$('#idNome1').html(nome);
-    //$('#idPc1').html(pc);
-  })
+  //$('#idNome1').html(nome);
+  //$('#idPc1').html(pc);
+
+
+
   
 }, 1000)
 
+function alterar(){
+  
+    $('#idNome1').html(nome[0]);
+    $('#idNome2').html(nome[1]);
+    $('#idNome3').html(nome[2]);
+    $('#idNome4').html(nome[3]);
+    $('#idNome5').html(nome[4]);
+    $('#idPc1').html(pc[0]);
+    $('#idPc2').html(pc[1]);
+    $('#idPc3').html(pc[2]);
+    $('#idPc4').html(pc[3]);
+    $('#idPc5').html(pc[4]);
+    
+  
+}
+
+function estruturar(num){
+ for(var i=0; i<4 ; i++ ){
+  if(nome[i] === ""){
+    nome[i] = nome[i+1];
+    pc[i] = pc[i+1];
+    nome[i+1] = "";
+    pc[i+1] = "";
+  }
+ }  
+}
+
+function limpar(){
+  nome[0] = "";
+  nome[1] = "";
+  nome[2] = "";
+  nome[3] = "";
+  nome[4] = "";
+  pc[0] = "";
+  pc[1] = "";
+  pc[2] = "";
+  pc[3] = "";
+  pc[4] = "";
+  
+  alterar()
+  
+}
+
+function verificarComputador(){
+  var mudou = false;
+  
+  for(var i = 0; i <5 ; i++){
+    if(pc[i] == nPc){
+      nome[i] = "";
+      pc[i] = "";
+      mudou = true;
+      alterar();
+      
+    }
+    if(mudou){
+      estruturar();
+    }
+  }
+
+}

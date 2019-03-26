@@ -29,8 +29,8 @@ app.post("/redir", function(req,res){
     nome = req.body.usuario;
     pc = req.body.pc;
 
-    console.log(req.body.usuario+" foi");
-    console.log(req.body.pc+" foi");
+    //console.log(req.body.usuario+" foi");
+    //console.log(req.body.pc+" foi");
     res.sendFile(__dirname + "/html/redir.html");
 })
 
@@ -59,7 +59,7 @@ app.get('/dados', (req, res) => {
 //----------------------------------------------------
 
 
-app.listen(8080, function(){
+app.listen(8081, function(){
 
-    console.log("servidor rodando parça nessa url aqui irmão http://localhost:8080");
+    console.log("servidor rodando em http://localhost:8081");
 });
