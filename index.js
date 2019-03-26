@@ -26,8 +26,8 @@ app.get("/fila", function(req,res){
 })
 
 app.post("/redir", function(req,res){
-    tituloNave = req.body.titulo;
-    conteudoNave = req.body.conteudo;
+    nome = req.body.usuario;
+    pc = req.body.pc;
 
     console.log(req.body.usuario+" foi");
     console.log(req.body.pc+" foi");
