@@ -58,7 +58,7 @@ app.post("/redir", function(req,res){
 
 
 app.use(express.static("js"));
-app.use(express.static("views"));
+//app.use(express.static("views"));
 
 app.get("/pag", function(req,res){
     
