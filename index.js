@@ -1,18 +1,19 @@
 const express = require("express");
 const app = express();
 const handlebars = require("express-handlebars");
-const bodyParser =require("body-parser")
-app.use(bodyParser.urlencoded({extended:false}))
-app.use(bodyParser.json())
+const bodyParser =require("body-parser");
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 app.engine("handlebars", handlebars({defaultLayout:"main"}));
 app.set("view engine","handlebars")
-app.use(express.static("js"));
+app.use(express.static("js/mudartexto"));
 
 
 var nome = "-/ini/-";
 var pc = "-/ini/-"
-
+var limpar = "";
+var enviar = "";
 app.get("/form", function(req,res){
     
     res.render("formulario")
@@ -28,9 +29,11 @@ app.get("/fila", function(req,res){
 app.post("/redir", function(req,res){
     nome = req.body.usuario;
     pc = req.body.pc;
-
+    //enviar = req.body.enviar;
     //console.log(req.body.usuario+" foi");
     //console.log(req.body.pc+" foi");
+    //console.log(req.body.enviar+" foi");
+    //console.log(req.body.limpar+" foi");
     res.sendFile(__dirname + "/html/redir.html");
 })
 
@@ -50,7 +53,12 @@ app.post("/volta", function(req,res){
 // envio dados para fila -----------------------------
 let getDados = () => {
     //O seu método de leitura do arquivo vem aqui
-    return nome +"|"+ pc;
+    if(enviar === "enviar"){
+        return nome +"|"+ pc;
+    }else {
+        return "-/ini/-|-/ini/-";
+    }
+    
 }
 
 app.get('/dados', (req, res) => {

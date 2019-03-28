@@ -1,20 +1,16 @@
 
-var nNome;
-var nPc;
+var novoNome;
+var novoPc;
 var nome = new Array(5);
 var pc = new Array(5);
 //nome[0] = "teste"
 //alert(nome[0] + " foi");
 //console.log(f.DATA); // MY DATA
+
+
 $(document).ready(function() {
   $.get('/dados', function(res) {
-    //nome = res.substring(res.indexOf("|"), 0 );
-    //pc = res.substring(res.indexOf("|")+1)
-    
 
-
-    //$('#idTitulo').html(titulo);
-    //$('#idConteudo').html(conteudo);
   })
 });
 
@@ -26,49 +22,22 @@ window.setInterval(
 function organzar(){
 
   $.get('/dados', function(res) {
-    nNome = res.substring(res.indexOf("|"), 0 );
-    nPc = res.substring(res.indexOf("|")+1);
+    novoNome = res.substring(res.indexOf("|"), 0 );
+    novoPc = res.substring(res.indexOf("|")+1);
 
   })
     
-  if(nNome === "-/ini/-" || nPc === "-/ini/-"){
+  if(novoNome === "-/ini/-" || novoPc === "-/ini/-"){
     
     limpar();
     
 
 
   }else{
-    /*
-    switch (nPc) {
-      case pc[0]:
-        nome[0] = "";
-        pc[0] = "";
-        estruturar(1)
-        break;
-      case pc[1]:
-        nome[1] = "";
-        pc[1] = "";
-        estruturar(2)
-        break;
-      case pc[2]:
-        nome[2] = "";
-        pc[2] = "";
-        estruturar(3)
-        break;
-      case pc[3]:
-        nome[3] = "";
-        pc[3] = "";
-        estruturar(4)
-        break;
-      case pc[4]:
-        nome[4] = "";
-        pc[4] = "";
-        estruturar(5)
-        break;  
-    }*/
+   
 
-    if(nome[0] === nNome){
-      pc[0] = nPc;
+    if(nome[0] === novoNome){
+      pc[0] = novoPc;
       $('#idPc1').html(pc[0]);
 
     }else{
@@ -82,8 +51,8 @@ function organzar(){
       pc[2] = pc[1];
       nome[1] = nome[0];
       pc[1] = pc[0];
-      nome[0] = nNome;
-      pc[0] = nPc;
+      nome[0] = novoNome;
+      pc[0] = novoPc;
       
       alterar();
 
@@ -151,7 +120,7 @@ function verificarComputador(){
   var mudou = false;
   
   for(var i = 0; i <5 ; i++){
-    if(pc[i] == nPc){
+    if(pc[i] == novoPc){
       nome[i] = "";
       pc[i] = "";
       mudou = true;
