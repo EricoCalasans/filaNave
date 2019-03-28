@@ -1,8 +1,8 @@
 
 <div class="container" align="center">
-    <form action="/redir" method="post">       
+    <form action="/redir" method="post" id="formulario">       
         <h1>Usuário</h1>
-        <input type ="text" name="usuario">
+        <input id = "idUsuario" type ="text" name="usuario">
         <!--button type ="submit" name="enviar" value= "enviar"> enviar </button-->
         <!--/form ><br-->
         </div>
@@ -10,8 +10,8 @@
             <!--form action="/redir" method="post"-->
             <h1>Computador</h1>
         
-            <input type = "radio" name="pc" value="01"> 01
-            <input type = "radio" name="pc" value="02"> 02
+            <input type = "radio" name="pc" id="idPc" value="01"> 01
+            <input type = "radio" name="pc" id="idPc" value="02"> 02
             <input type = "radio" name="pc" value="03"> 03
             <input type = "radio" name="pc" value="04"> 04
             <input type = "radio" name="pc" value="05"> 05<br>
@@ -41,11 +41,28 @@
         </div>
         <div class="container" align="center">
         <!--input type ="submit" name="enviar" value= "enviar"-->
-        <button type ="submit" name="enviar" value= "enviar"> enviar </button>
+        
+
+        <button type ="button" id = "idEnviar" name="enviar" value= "enviar" onclick="validar()"> enviar </button>
+        <button type ="submit" name="limpar" value= "limpar"> limpar </button>  
     </form> 
     <form action="/redir" method="post">
-    <button type ="submit" name="limpar" value= "limpar"> limpar </button>  
+    
     </form>       
+</div>
+
+    <div class="container" align="center">
+    <table>
+        <tr>
+            <th>____________________ÚLTIMO USUÁRIO___________________</th>
+            <th>MÁQUINA</th>
+        </tr>
+        <tr>
+            <td id="idNome1" ></td>
+            <td id="idPc1"></td>
+
+    </table>
+
 </div>
         
 

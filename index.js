@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.engine("handlebars", handlebars({defaultLayout:"main"}));
 app.set("view engine","handlebars")
-app.use(express.static("js/mudartexto"));
+app.use(express.static("js"));
 
 
 var nome = "-/ini/-";
@@ -29,7 +29,8 @@ app.get("/fila", function(req,res){
 app.post("/redir", function(req,res){
     nome = req.body.usuario;
     pc = req.body.pc;
-    //enviar = req.body.enviar;
+    enviar = req.body.enviar;
+    limpar = req.body.limpar;
     //console.log(req.body.usuario+" foi");
     //console.log(req.body.pc+" foi");
     //console.log(req.body.enviar+" foi");
@@ -37,9 +38,14 @@ app.post("/redir", function(req,res){
     res.sendFile(__dirname + "/html/redir.html");
 })
 
-app.get("/js", function(req,res){
+app.get("/mudartexto.js", function(req,res){
     
     res.sendFile(__dirname + "/js/mudartexto.js");
+})
+
+app.get("/validar.js", function(req,res){
+    
+    res.sendFile(__dirname + "/js/validar.js");
 })
 
 app.post("/volta", function(req,res){
@@ -53,10 +59,11 @@ app.post("/volta", function(req,res){
 // envio dados para fila -----------------------------
 let getDados = () => {
     //O seu método de leitura do arquivo vem aqui
-    if(enviar === "enviar"){
-        return nome +"|"+ pc;
-    }else {
+    if(limpar === "limpar"){
+        
         return "-/ini/-|-/ini/-";
+    }else {
+        return nome +"|"+ pc;
     }
     
 }
