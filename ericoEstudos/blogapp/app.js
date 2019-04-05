@@ -16,7 +16,7 @@ const admin = require ("./routes/admin")
 //mongoose
 
 //rotas
-
+    app.use('/admin', admin);
 //outros
 const PORT = 8081
 app.listen(PORT, () => {
