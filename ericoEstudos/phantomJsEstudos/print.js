@@ -8,16 +8,16 @@ const takeSreenshot = async(url , name) =>{
     console.log(status)
 
     const content = await page.property('content')
-    //console.log(content)
+    console.log(content)
 
     await page.render(name + '.png')
 
     await instance.exit()
 }
 
-takeSreenshot('https://google.com', "google")
-takeSreenshot('https://facebook.com/', "face")
-takeSreenshot('https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg', "dog")
+//takeSreenshot('https://google.com', "google")
+//takeSreenshot('https://facebook.com/', "face")
+//takeSreenshot('https://san.navedoconhecimento.org.br/', "SAN")
 
 
 
