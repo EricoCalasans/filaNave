@@ -1121,13 +1121,13 @@
 
                     <ul class="icons-ul">
                     
+                        <li><i class="icon-li icon-ok"></i>PC #7 (pc07)</li>
+                    
+                        <li><i class="icon-li icon-ok"></i>PC #8 (pc08)</li>
+                    
                         <li><i class="icon-li icon-ok"></i>PC #11 (pc11)</li>
                     
-                        <li><i class="icon-li icon-ok"></i>PC #14 (pc14)</li>
-                    
-                        <li><i class="icon-li icon-ok"></i>PC #15 (pc15)</li>
-                    
-                        <li><i class="icon-li icon-ok"></i>PC #16 (pc16)</li>
+                        <li><i class="icon-li icon-ok"></i>PC #12 (pc12)</li>
                     
                     </ul>
 
@@ -1157,13 +1157,13 @@
                         <div class="span4 no-search">
                             <select name="equipamento_5">
                                 
+                                <option value="170">PC #7 (pc07)</option>
+                                
+                                <option value="171">PC #8 (pc08)</option>
+                                
                                 <option value="174">PC #11 (pc11)</option>
                                 
-                                <option value="177">PC #14 (pc14)</option>
-                                
-                                <option value="178">PC #15 (pc15)</option>
-                                
-                                <option value="179">PC #16 (pc16)</option>
+                                <option value="175">PC #12 (pc12)</option>
                                 
                             </select>
                         </div>
@@ -1335,11 +1335,7 @@
 
                     <ul class="icons-ul">
                     
-                        <li><i class="icon-li icon-ok"></i>PC #21 (pc21)</li>
-                    
-                        <li><i class="icon-li icon-ok"></i>PC #22 (pc22)</li>
-                    
-                        <li><i class="icon-li icon-ok"></i>PC #23 (pc23)</li>
+                        <li><i class="icon-li icon-ok"></i>PC #20 (pc20)</li>
                     
                         <li><i class="icon-li icon-ok"></i>PC #24 (pc24)</li>
                     
@@ -1348,8 +1344,6 @@
                         <li><i class="icon-li icon-ok"></i>PC #26 (pc26)</li>
                     
                         <li><i class="icon-li icon-ok"></i>PC #27 (pc27)</li>
-                    
-                        <li><i class="icon-li icon-ok"></i>PC #28 (pc28)</li>
                     
                     </ul>
 
@@ -1379,11 +1373,7 @@
                         <div class="span4 no-search">
                             <select name="equipamento_6">
                                 
-                                <option value="25">PC #21 (pc21)</option>
-                                
-                                <option value="182">PC #22 (pc22)</option>
-                                
-                                <option value="183">PC #23 (pc23)</option>
+                                <option value="16">PC #20 (pc20)</option>
                                 
                                 <option value="184">PC #24 (pc24)</option>
                                 
@@ -1392,8 +1382,6 @@
                                 <option value="186">PC #26 (pc26)</option>
                                 
                                 <option value="187">PC #27 (pc27)</option>
-                                
-                                <option value="188">PC #28 (pc28)</option>
                                 
                             </select>
                         </div>
@@ -1603,8 +1591,6 @@
                     
                         <li><i class="icon-li icon-ok"></i>PC #19 (pc19)</li>
                     
-                        <li><i class="icon-li icon-ok"></i>PC #20 (pc20)</li>
-                    
                         <li><i class="icon-li icon-ok"></i>PC #21 (pc21)</li>
                     
                         <li><i class="icon-li icon-ok"></i>PC #22 (pc22)</li>
@@ -1618,8 +1604,6 @@
                         <li><i class="icon-li icon-ok"></i>PC #26 (pc26)</li>
                     
                         <li><i class="icon-li icon-ok"></i>PC #27 (pc27)</li>
-                    
-                        <li><i class="icon-li icon-ok"></i>PC #28 (pc28)</li>
                     
                         <li><i class="icon-li icon-ok"></i>PC #29 (pc29)</li>
                     
@@ -1691,8 +1675,6 @@
                                 
                                 <option value="485">PC #19 (pc19)</option>
                                 
-                                <option value="486">PC #20 (pc20)</option>
-                                
                                 <option value="487">PC #21 (pc21)</option>
                                 
                                 <option value="488">PC #22 (pc22)</option>
@@ -1706,8 +1688,6 @@
                                 <option value="492">PC #26 (pc26)</option>
                                 
                                 <option value="493">PC #27 (pc27)</option>
-                                
-                                <option value="494">PC #28 (pc28)</option>
                                 
                                 <option value="495">PC #29 (pc29)</option>
                                 

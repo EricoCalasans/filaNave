@@ -8,3 +8,9 @@ body-parser
 mysql2
 handlebars
 sequalize
+Phantomjs
+mongoDB
+mongoose
+horsemanjs
+express-sessiom
+webpage

@@ -1,18 +1,42 @@
 var Horseman = require('node-horseman');
 var horsemanLogin = new Horseman({cookiesFile: 'cookieJar'});
+var horsemanLoginVerif = new Horseman({cookiesFile: 'cookieJar'});
 var horseman = new Horseman({cookiesFile: 'cookieJar'});
 
 var fs = require('fs');
 
- cookieJar = '';
+ //cookieJar = '';
 
 
 
 //var cookieJar;
 
 
+var verifLogin = (nome,senha) => {
+    horsemanLoginVerif
+    .cookies()
+    .open('https://san.navedoconhecimento.org.br')
+    .html('.login-container').then((html) => {
 
-function logando(nome, senha) {
+        if(html === undefined){
+            console.log("esta logado")
+        }else{
+            console.log("não esta logado")
+            //logando(nome,senha)
+        }
+        console.log("flag1")
+        
+
+    })
+    .close()
+    
+    
+
+    
+}
+
+
+var logando = (nome, senha) => {
     horsemanLogin
     .cookies()
     .open('https://san.navedoconhecimento.org.br')
@@ -44,8 +68,10 @@ function acessandoLantable(){
 }
 
 
-logando('ericocalasans', 'erico485')
-acessandoLantable();
+verifLogin('ericocalasans', 'erico485')
+//logando('ericocalasans', 'erico485')
+//logando('ericocalasans', 'erico485')
+//acessandoLantable();
 
 
 
