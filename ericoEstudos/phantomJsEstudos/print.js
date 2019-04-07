@@ -15,7 +15,8 @@ const takeSreenshot = async(url , name) =>{
     await instance.exit()
 }
 
-//takeSreenshot('https://google.com', "google")
+
+takeSreenshot('https://google.com', "google")
 //takeSreenshot('https://facebook.com/', "face")
 //takeSreenshot('https://san.navedoconhecimento.org.br/', "SAN")
 

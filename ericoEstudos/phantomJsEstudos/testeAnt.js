@@ -5,7 +5,7 @@ page.viewportSize = {
     width: 1024,
     height: 720
 };
-page.open("https://google.com",function(status)  {
+page.open("https://facebook.com",function(status)  {
 
     
     console.log("status: " + status)

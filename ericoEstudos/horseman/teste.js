@@ -15,11 +15,14 @@ users.forEach( function( user ){
 	var horseman = new Horseman();
 	horseman
 		.open('https://mobile.twitter.com/' + user)
+		.wait(1000)
         .text('table.profile-stats > tbody > tr > td.stat > a[href$="/followers"] > div.statnum')
         .then(function(text){
 			console.log( user + ': ' + text );
 		})
+		
 		.finally(function(){
 			return horseman.close();
-		});	
+		});
+			
 });
