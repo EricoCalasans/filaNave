@@ -1,11 +1,11 @@
-var Horseman = require('node-horseman');
-var horsemanLogin = new Horseman({cookiesFile: 'cookieJar'});
-var horsemanLoginVerif = new Horseman({cookiesFile: 'cookieJar'});
-var horseman = new Horseman({cookiesFile: 'cookieJar'});
+const Horseman = require('node-horseman');
+const horsemanLogin = new Horseman({cookiesFile: 'cookieJar'});
+const horsemanLoginVerif = new Horseman({cookiesFile: 'cookieJar'});
+const horseman = new Horseman({cookiesFile: 'cookieJar'});
 
 var fs = require('fs');
 
- //cookieJar = '';
+//cookieJar = '';
 
 
 
@@ -29,10 +29,7 @@ var verifLogin = (nome,senha) => {
 
     })
     .close()
-    
-    
 
-    
 }
 
 
