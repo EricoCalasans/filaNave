@@ -68,9 +68,9 @@ function acessandoLantable(){
 }
 
 
-verifLogin('ericocalasans', 'erico485')
-//logando('ericocalasans', 'erico485')
-//logando('ericocalasans', 'erico485')
+verifLogin('xxxxxxx', 'xxxxxxxx')
+//logando('xxxxxxx', 'xxxxxxxx')
+//logando('xxxxxxx', 'xxxxxxxx')
 //acessandoLantable();
 
 
