@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router();
 const mongoose = require('mongoose')
 require("../models/Categoria")
-const Categoria = mongoose.model("Categorias")
+const Categoria = mongoose.model("categorias")
 
 
 router.get('/', (req, res) => {
@@ -55,12 +55,7 @@ router.post('/categorias/nova', (req, res) => {
             res.redirect("/admin")
             //console.log("falha ao salvar Categoria " + err)
         })
-    
-
     }
-
-
-    
     //res.render("admin/addcategorias")      
 })
 
@@ -72,7 +67,6 @@ router.get("/categorias/edit/:id", (req,res) => {
         req.flash("error_msg", "esta categria nao existe")
         res.redirect("/admin/categorias")
     })
-    
 })
 
 router.post("/categorias/edit", (req,res) => {
@@ -107,6 +101,20 @@ router.post('/categorias/deletar' , (req, res) => {
 
 router.get('/categorias/add', (req, res) => {
     res.render("admin/addcategorias")      
+})
+
+router.get('/postagens', (req, res) => {
+    res.render("admin/postagens")      
+})
+
+router.get('/postagens/add' , (req,res) => {
+    Categoria.find().then((categorias) => {
+        res.render("admin/addpostagens", {categorias: categorias})
+    }).catch((err) => {
+        req.flash("error_msg", "houve um erro ao carregar o formulario")
+        res.redirect('/admin')
+    })
+    
 })
 
 module.exports = router

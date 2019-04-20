@@ -44,7 +44,7 @@ const flash = require('connect-flash');
         app.use(express.static(path.join(__dirname,"public")))
 
         app.use((req, res, next) => {
-            console.log("midware ativado")
+            //console.log("midware ativado")
 
             next();
 
