@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const Postagem = new Schema({
@@ -20,7 +20,7 @@ const Postagem = new Schema({
     },
     categoria:{
         type: Schema.Types.ObjectId,
-        ref: "Categorias",
+        ref: "categorias",
         required: true
     },
     data:{

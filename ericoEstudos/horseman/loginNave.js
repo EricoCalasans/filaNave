@@ -22,6 +22,7 @@ var verifLogin = (nome,senha) => {
             console.log("esta logado")
         }else{
             console.log("não esta logado")
+            logando(nome, senha)
             //logando(nome,senha)
         }
         console.log("flag1")
@@ -56,7 +57,10 @@ function acessandoLantable(){
     //.cookies()
     //.wait(2000)
     .open('https://san.navedoconhecimento.org.br/admin/espaco/index')
-    .html('body', 'zeca')
+    .wait(3000)
+    .click('span[id="gatilho_espaco_5"]')
+    .wait(3000)
+    .html('body', 'pagLantTestes.html')
     .then(()=>{
         //console.log("pegou a pagina parça")
     })
@@ -65,10 +69,10 @@ function acessandoLantable(){
 }
 
 
-verifLogin('xxxxxxx', 'xxxxxxxx')
+verifLogin('ericocalasans', 'erico485')
 //logando('xxxxxxx', 'xxxxxxxx')
 //logando('xxxxxxx', 'xxxxxxxx')
-//acessandoLantable();
+acessandoLantable();
 
 
 
